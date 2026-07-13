@@ -157,7 +157,20 @@ nav a:hover{
 /* ===============================
         HERO SECTION
 ================================*/
-
+/* Hero Section Styling */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://i.ibb.co.com/KxhRYjt7/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
 
 .hero{
 
@@ -170,7 +183,7 @@ nav a:hover{
     rgba(0,0,0,.75)
     ),
 
-    url("images/hero.jpg");
+    url();
 
     background-size:cover;
 
