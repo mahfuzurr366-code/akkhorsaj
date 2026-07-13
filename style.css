@@ -984,114 +984,121 @@ nav a{
 
     color:#d4af37;
 
-}/* ==========================
-      PAYMENT CENTER
-========================== */
-
-#payment{
-
-    padding:80px 20px;
-
-    background:#111;
-
-    text-align:center;
-
+/* ==============================================================
+        LUXURY PAYMENT CENTER (MUTED & GOLDEN NUMBERS)
+================================================================*/
+#payment {
+    padding: 100px 20px;
+    background: #0b0b0b;
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.05);
 }
 
-.payment-subtitle{
-
-    color:#ccc;
-
-    margin-bottom:40px;
-
+.payment-subtitle {
+    color: #888; /* ডার্ক গ্রে */
+    margin-bottom: 50px;
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
-.payment-container{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-    gap:30px;
-
+.payment-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 850px;
+    margin: auto;
 }
 
-.payment-card{
-
-    background:#1d1d1d;
-
-    border-radius:18px;
-
-    padding:35px;
-
-    transition:.3s;
-
+.payment-card {
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 45px 40px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-.payment-card:hover{
+.bkash { border: 1px solid rgba(226, 19, 110, 0.2); }
+.nagad { border: 1px solid rgba(255, 122, 0, 0.2); }
 
-    transform:translateY(-8px);
-
+.payment-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.03);
 }
 
-.bkash{
-
-    border:2px solid #e2136e;
-
+.bkash:hover {
+    box-shadow: 0 20px 40px rgba(226, 19, 110, 0.12);
+    border-color: rgba(226, 19, 110, 0.5);
 }
 
-.nagad{
-
-    border:2px solid #ff7a00;
-
+.nagad:hover {
+    box-shadow: 0 20px 40px rgba(255, 122, 0, 0.12);
+    border-color: rgba(255, 122, 0, 0.5);
 }
 
-.payment-card h3{
-
-    font-size:30px;
-
-    margin-bottom:15px;
-
+.payment-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
-.payment-card h1{
+.bkash h3 { color: #e2136e; text-shadow: 0 0 15px rgba(226, 19, 110, 0.25); }
+.nagad h3 { color: #ff7a00; text-shadow: 0 0 15px rgba(255, 122, 0, 0.25); }
 
-    margin:20px 0;
-
-    font-size:38px;
-
+.payment-card p {
+    color: #666; /* মিউটেড কালার */
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.copy-btn{
-
-    padding:12px 25px;
-
-    border:none;
-
-    border-radius:30px;
-
-    cursor:pointer;
-
-    font-size:16px;
-
-    font-weight:bold;
-
-    background:#fff;
-
-    margin:20px 0;
-
+/* ফোন নম্বরের কালার কড়া সাদা থেকে লাক্সারি গোল্ডেন করা হলো */
+.payment-card h1 {
+    margin: 25px 0;
+    font-size: 34px;
+    letter-spacing: 1.5px;
+    color: #d4af37; 
+    font-weight: 400;
+    font-family: sans-serif;
 }
 
-.copy-btn:hover{
-
-    background:#d4af37;
-
+.copy-btn {
+    padding: 10px 24px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    background: transparent;
+    color: #ffe58a; /* সফট শ্যাম্পেন গোল্ড */
+    margin: 10px 0 25px;
+    transition: 0.3s ease;
 }
 
-.payment-note{
+.copy-btn:hover:not([disabled]) {
+    background: #d4af37;
+    color: #000;
+    border-color: #d4af37;
+}
 
-    margin:20px 0;
+.copy-btn[disabled] {
+    color: #444;
+    border-color: rgba(255, 255, 255, 0.03);
+    cursor: not-allowed;
+}
 
-    color:#bbb;
+.payment-note {
+    margin-top: 20px;
+    color: #888; /* ডার্ক গ্রে */
+    font-size: 14px;
+}
 
+.payment-card .btn {
+    padding: 12px 30px;
+    font-size: 14px;
+    margin-top: 15px;
 }
