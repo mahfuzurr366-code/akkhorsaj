@@ -1,108 +1,104 @@
 window.addEventListener("DOMContentLoaded", () => {
-
+    // ==========================================
+    // 1. PREMIUM LIGHTBOX SYSTEM (FIXED)
+    // ==========================================
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
     const closeBtn = document.querySelector(".close-lightbox");
-    const images = document.querySelectorAll(".gallery .card img");
+    // নতুন HTML অনুযায়ী ক্লাস সিলেক্টর .art-card করা হলো
+    const images = document.querySelectorAll(".art-card img");
 
-    console.log("Images Found:", images.length);
-
-    images.forEach((img) => {
-
-        img.addEventListener("click", function () {
-
-            lightbox.style.display = "flex";
-            lightboxImg.src = this.src;
-
+    if (lightbox && lightboxImg && images.length > 0) {
+        images.forEach((img) => {
+            img.addEventListener("click", function () {
+                lightbox.style.display = "flex";
+                lightbox.setAttribute("aria-hidden", "false");
+                lightboxImg.src = this.src;
+            });
         });
 
-    });
+        if (closeBtn) {
+            closeBtn.onclick = function () {
+                lightbox.style.display = "none";
+                lightbox.setAttribute("aria-hidden", "true");
+            };
+        }
 
-    if (closeBtn) {
-
-        closeBtn.onclick = function () {
-            lightbox.style.display = "none";
+        lightbox.onclick = function (e) {
+            if (e.target === lightbox) {
+                lightbox.style.display = "none";
+                lightbox.setAttribute("aria-hidden", "true");
+            }
         };
-
     }
 
-    lightbox.onclick = function (e) {
+    // ==========================================
+    // 2. GALLERY FILTER & SEARCH SYSTEM (FIXED)
+    // ==========================================
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    // নতুন HTML অনুযায়ী ক্লাস সিলেক্টর .art-card করা হলো
+    const cards = document.querySelectorAll(".art-card");
+    const searchInput = document.getElementById("searchInput");
 
-        if (e.target === lightbox) {
-            lightbox.style.display = "none";
-        }
-
-    };
-
-});// ==========================
-// GALLERY FILTER
-// ==========================
-
-const filterButtons = document.querySelectorAll(".filter-btn");
-const cards = document.querySelectorAll(".gallery .card");
-
-filterButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        // Active Button
-        filterButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        const filter = button.dataset.filter;
+    function filterArticles() {
+        const searchValue = searchInput ? searchInput.value.toLowerCase() : "";
+        const activeBtn = document.querySelector(".filter-btn.active");
+        const activeFilter = activeBtn ? activeBtn.dataset.filter : "all";
 
         cards.forEach(card => {
+            const titleElement = card.querySelector(".art-title");
+            const title = titleElement ? titleElement.textContent.toLowerCase() : "";
+            const category = card.dataset.category;
 
-            if (filter === "all" || card.dataset.category === filter) {
+            const matchesSearch = title.includes(searchValue);
+            const matchesFilter = (activeFilter === "all" || category === activeFilter);
 
-                card.style.display = "block";
-
+            // গ্রিড লেআউট ঠিক রাখতে block-এর বদলে flex ব্যবহার করা নিরাপদ
+            if (matchesSearch && matchesFilter) {
+                card.style.display = "flex"; 
             } else {
-
                 card.style.display = "none";
-
             }
-
         });
+    }
 
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+            filterArticles();
+        });
     });
 
-});// ==========================
-// SEARCH
-// ==========================
+    if (searchInput) {
+        searchInput.addEventListener("keyup", filterArticles);
+    }
+});
 
-const searchInput = document.getElementById("searchInput");
+// ==========================================
+// 3. DYNAMIC LUXURY COPY FUNCTION (FIXED)
+// ==========================================
+// HTML-এর onclick="copyNumber()" ফাংশনের সাথে মেলানোর জন্য প্যারামিটার সহজ করা হলো
+function copyNumber() {
+    const numberElement = document.getElementById("bkashNumber");
+    // HTML-এ থাকা নির্দিষ্ট বাতনকে সিলেক্ট করা হলো
+    const buttonElement = document.querySelector(".btn-copy"); 
+    
+    if (!numberElement || !buttonElement) return;
 
-searchInput.addEventListener("keyup", function(){
+    const number = numberElement.innerText.trim();
 
-    const value = this.value.toLowerCase();
+    navigator.clipboard.writeText(number).then(() => {
+        // আইকনসহ টেক্সট চেঞ্জ করার লাক্সারি অ্যানিমেশন
+        const originalHTML = buttonElement.innerHTML;
+        buttonElement.innerHTML = '<span style="font-size: 11px; font-weight: 600; color: #c5a880; letter-spacing: 1px;">COPIED!</span>';
+        buttonElement.disabled = true;
 
-    cards.forEach(card=>{
-
-        const title =
-        card.querySelector("h3").textContent.toLowerCase();
-
-        if(title.includes(value)){
-
-            card.style.display="block";
-
-        }else{
-
-            card.style.display="none";
-
-        }
-
+        setTimeout(() => {
+            buttonElement.innerHTML = originalHTML;
+            buttonElement.disabled = false;
+        }, 2000);
+    }).catch(err => {
+        console.error("Failed to copy text: ", err);
     });
-
-});function copyNumber(){
-
-    const number =
-    document.getElementById("bkashNumber").innerText;
-
-    navigator.clipboard.writeText(number);
-
-    alert("bKash Number Copied!");
 }

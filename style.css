@@ -1,1117 +1,825 @@
-/* ===============================
-   AKKHORSAJ PREMIUM DESIGN
-   PART 1
-================================*/
+/* ==============================================================
+   AKKHORSAJ ATELIER | INTERNATIONAL MODERN LUXURY ART GALLERY CSS
+   ============================================================== */
 
+/* --- CSS Variables / Design Tokens --- */
+:root {
+    /* Color Palette */
+    --bg-deep: #0a0a0a;            /* পিওর ডার্ক গ্যালারি ক্যানভাস */
+    --bg-card: #121212;            /* স্টুডিও গ্রে (কার্ড ও সেকশনের জন্য) */
+    --bg-card-hover: #161616;
+    
+    --primary-gold: #c5a880;       /* শ্যাম্পেন মেটালিক গোল্ড */
+    --gold-bright: #ffe58a;        /* হাইলাইট গোল্ড */
+    --text-pure: #ffffff;
+    --text-muted: #8c8c8c;         /* আন্তর্জাতিক স্ট্যান্ডার্ডের মিউটেড গ্রে */
+    
+    /* Subtle Borders & Accents */
+    --border-subtle: rgba(197, 168, 128, 0.12); /* ১ পিক্সেল গোল্ডেন বর্ডার */
+    --border-light: rgba(255, 255, 255, 0.05);
+    
+    /* Brand Payment Accents (সূক্ষ্ম বর্ডার ও নিয়ন গ্লো) */
+    --bkash-glow: rgba(226, 19, 110, 0.2);
+    --bkash-border: rgba(226, 19, 110, 0.35);
+    --nagad-glow: rgba(255, 122, 0, 0.15);
+    --nagad-border: rgba(255, 122, 0, 0.35);
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    /* Animation */
+    --transition-premium: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-
-html{
-    scroll-behavior:smooth;
+/* --- Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-body{
-
-    font-family:
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
-    background:#0b0b0b;
-
-    color:#fff;
-
-    line-height:1.6;
-
+html {
+    scroll-behavior: smooth;
 }
 
-
-
-.container{
-
-    width:90%;
-
-    max-width:1200px;
-
-    margin:auto;
-
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-deep);
+    color: var(--text-pure);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
 }
 
-
-
-/* ===============================
-        HEADER
-================================*/
-
-
-header{
-
-    background:
-    rgba(0,0,0,0.85);
-
-    backdrop-filter:blur(10px);
-
-    position:sticky;
-
-    top:0;
-
-    z-index:1000;
-
-    padding:15px 0;
-
-    border-bottom:
-    1px solid rgba(255,215,0,.2);
-
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-
-
-header .container{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
+/* --- Global Typography --- */
+h1, h2, h3, h4, .logo-text, .section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
-
-
-/* LOGO */
-
-
-.logo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
+/* --- Reusable Section Framework --- */
+.section {
+    padding: 100px 0;
 }
 
-
-
-.logo img{
-
-    width:60px;
-
-    height:60px;
-
-    object-fit:contain;
-
+.bg-light {
+    background-color: var(--bg-card);
 }
 
-
-
-.logo h2{
-
-    font-size:28px;
-
-    letter-spacing:2px;
-
-    color:#d4af37;
-
+.bg-dark {
+    background-color: #050505;
 }
 
-
-
-
-
-/* NAVIGATION */
-
-
-nav a{
-
-    color:#fff;
-
-    text-decoration:none;
-
-    margin-left:25px;
-
-    font-size:17px;
-
-    transition:.3s;
-
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-
-
-nav a:hover{
-
-    color:#d4af37;
-
+.section-title {
+    font-size: 38px;
+    color: var(--primary-gold);
+    margin-bottom: 12px;
 }
 
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
 
+.section-tag {
+    color: var(--primary-gold);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+}
 
+/* --- Premium Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: var(--transition-premium);
+    cursor: pointer;
+}
 
+.btn-primary {
+    background-color: var(--primary-gold);
+    color: var(--bg-deep);
+}
 
-/* ===============================
-        HERO SECTION
-================================*/
-/* Hero Section Styling */
-.hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://i.ibb.co.com/KxhRYjt7/hero.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
+.btn-primary:hover {
+    background-color: var(--gold-bright);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(197, 168, 128, 0.2);
+}
+
+.btn-secondary, .btn-outline {
+    background-color: transparent;
+    color: var(--text-pure);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover, .btn-outline:hover {
+    border-color: var(--primary-gold);
+    color: var(--primary-gold);
+    transform: translateY(-3px);
+}
+
+.btn-sm {
+    padding: 10px 20px;
+    font-size: 11px;
+}
+
+/* ===============================================
+        HEADER & NAVIGATION
+=============================================== */
+.site-header {
+    background: rgba(10, 10, 10, 0.80);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 20px;
+    letter-spacing: 4px;
+    color: var(--primary-gold);
+    font-weight: 600;
+}
+
+.main-nav .nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 35px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+.main-nav .nav-link:hover, .main-nav .nav-link.active {
+    color: var(--gold-bright);
+}
+
+/* ===============================================
+        HERO VIEWPORT
+=============================================== */
+.hero-viewport {
+    height: 90vh;
+    background: linear-gradient(rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.85)), 
+                url("https://i.ibb.co.com/KxhRYjt7/hero.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+}
+
+.hero-title {
+    font-size: 64px;
+    line-height: 1.15;
+    margin: 15px 0 25px;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+}
+
+/* ===============================================
+        CURATED GALLERY (MUSEUM DESIGN)
+=============================================== */
+.gallery-controls {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    color: #ffffff;
-}
-
-.hero{
-
-    height:90vh;
-
-    background:
-
-    linear-gradient(
-    rgba(0,0,0,.55),
-    rgba(0,0,0,.75)
-    ),
-
-    url();
-
-    background-size:cover;
-
-    background-position:center;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-}
-
-
-
-.hero-content{
-
-    max-width:700px;
-
-    padding:40px;
-
-    background:
-
-    rgba(255,255,255,.08);
-
-    backdrop-filter:blur(12px);
-
-    border-radius:20px;
-
-    border:
-
-    1px solid rgba(255,215,0,.25);
-
-}
-
-
-
-
-
-.hero h1{
-
-    font-size:55px;
-
-    color:#d4af37;
-
-    letter-spacing:2px;
-
-}
-
-
-
-.hero p{
-
-    font-size:20px;
-
-    margin:25px 0;
-
-}
-
-
-
-
-
-/* ===============================
-        BUTTON
-================================*/
-
-
-.btn{
-
-    display:inline-block;
-
-    padding:13px 35px;
-
-    background:
-
-    linear-gradient(
-    45deg,
-    #d4af37,
-    #ffe58a
-    );
-
-
-    color:#000;
-
-    text-decoration:none;
-
-    border-radius:50px;
-
-    font-weight:bold;
-
-    transition:.4s;
-
-}
-
-
-
-.btn:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:
-
-    0 10px 25px
-    rgba(212,175,55,.5);
-
-}/* ===============================
-        GALLERY
-================================*/
-
-.gallery{
-
-    padding:80px 20px;
-
-    background:#141414;
-
-}
-
-
-.gallery h2,
-#about h2,
-#contact h2,
-#order h2,
-#payment h2{
-
-    text-align:center;
-
-    font-size:40px;
-
-    color:#d4af37;
-
-    margin-bottom:40px;
-
-}
-
-
-.gallery-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-
-    gap:30px;
-
-}
-
-
-
-/* ===============================
-        ART CARD
-================================*/
-
-.card{
-
-    background:#1f1f1f;
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    text-align:center;
-
-    transition:.35s;
-
-    border:1px solid rgba(212,175,55,.15);
-
-}
-
-
-.card:hover{
-
-    transform:translateY(-10px);
-
-    box-shadow:
-    0 15px 35px
-    rgba(212,175,55,.25);
-
-}
-
-
-.card img{
-
-    width:100%;
-
-    height:300px;
-
-    object-fit:cover;
-
-    transition:.4s;
-
-}
-
-
-.card:hover img{
-
-    transform:scale(1.05);
-
-}
-
-
-.card h3{
-
-    margin-top:20px;
-
-    font-size:22px;
-
-}
-
-
-.card p{
-
-    color:#ccc;
-
-    margin:10px 0;
-
-}
-
-
-.card h4{
-
-    color:#d4af37;
-
-    margin-bottom:20px;
-
-}
-
-
-/* ===============================
-        ABOUT
-================================*/
-
-#about{
-
-    padding:80px 20px;
-
-    text-align:center;
-
-    background:#101010;
-
-}
-
-
-#about p{
-
-    max-width:800px;
-
-    margin:auto;
-
-    color:#ddd;
-
-    font-size:18px;
-
-    line-height:1.9;
-
-}
-
-
-/* ===============================
-        CONTACT
-================================*/
-
-#contact{
-
-    padding:80px 20px;
-
-    text-align:center;
-
-    background:#161616;
-
-}
-
-
-#contact p{
-
-    margin:12px 0;
-
-    font-size:18px;
-
-}
-
-
-#contact strong{
-
-    color:#d4af37;
-
-}
-
-
-#contact a{
-
-    display:inline-block;
-
-    margin-top:25px;
-
-    color:#d4af37;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    transition:.3s;
-
-}
-
-
-#contact a:hover{
-
-    color:#fff;
-
-}/* ===============================
-        ORDER SECTION
-================================*/
-
-#order{
-
-    padding:80px 20px;
-
-    background:#121212;
-
-    text-align:center;
-
-}
-
-
-#order form{
-
-    max-width:650px;
-
-    margin:40px auto 0;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:18px;
-
-}
-
-
-#order input,
-#order select,
-#order textarea{
-
-    width:100%;
-
-    padding:15px;
-
-    font-size:16px;
-
-    color:#fff;
-
-    background:#1e1e1e;
-
-    border:1px solid rgba(212,175,55,.3);
-
-    border-radius:10px;
-
-    outline:none;
-
-    transition:.3s;
-
-}
-
-
-#order input:focus,
-#order select:focus,
-#order textarea:focus{
-
-    border-color:#d4af37;
-
-    box-shadow:0 0 12px rgba(212,175,55,.3);
-
-}
-
-
-#order textarea{
-
-    min-height:140px;
-
-    resize:vertical;
-
-}
-
-
-
-/* ===============================
-        PAYMENT
-================================*/
-
-#payment{
-
-    padding:80px 20px;
-
-    text-align:center;
-
-    background:#f7f3e8;
-
-    color:#222;
-
-}
-
-
-#payment h2{
-
-    color:#222;
-
-}
-
-
-#payment h3{
-
-    color:#e2136e;
-
-    font-size:30px;
-
-}
-
-
-#payment h1{
-
-    font-size:42px;
-
-    margin:20px 0;
-
-}
-
-
-
-/* ===============================
-        FOOTER
-================================*/
-
-footer{
-
-    background:#000;
-
-    text-align:center;
-
-    padding:30px 20px;
-
-    border-top:1px solid rgba(212,175,55,.2);
-
-}
-
-
-footer p{
-
-    color:#aaa;
-
-}
-
-
-
-/* ===============================
-      WHATSAPP BUTTON
-================================*/
-
-.whatsapp{
-
-    position:fixed;
-
-    right:20px;
-
-    bottom:20px;
-
-    background:#25D366;
-
-    color:#fff;
-
-    padding:15px 22px;
-
-    border-radius:50px;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.4);
-
-    transition:.3s;
-
-    z-index:999;
-
-}
-
-
-.whatsapp:hover{
-
-    background:#128C7E;
-
-    transform:translateY(-4px);
-
-}
-
-
-
-/* ===============================
-      SCROLLBAR
-================================*/
-
-::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-
-::-webkit-scrollbar-track{
-
-    background:#111;
-
-}
-
-
-::-webkit-scrollbar-thumb{
-
-    background:#d4af37;
-
-    border-radius:10px;
-
-}
-
-
-
-/* ===============================
-      RESPONSIVE
-================================*/
-
-@media(max-width:768px){
-
-header .container{
-
-    flex-direction:column;
-
-}
-
-
-nav{
-
-    margin-top:15px;
-
-    text-align:center;
-
-}
-
-
-nav a{
-
-    display:inline-block;
-
-    margin:8px 10px;
-
-}
-
-
-.hero{
-
-    height:75vh;
-
-}
-
-
-.hero h1{
-
-    font-size:38px;
-
-}
-
-
-.hero p{
-
-    font-size:17px;
-
-}
-
-
-.logo h2{
-
-    font-size:22px;
-
-}
-
-
-.gallery h2,
-#about h2,
-#contact h2,
-#order h2,
-#payment h2{
-
-    font-size:30px;
-
-}
-
-
-.card img{
-
-    height:240px;
-
-}
-
-}/* ==========================
-        IMAGE LIGHTBOX
-========================== */
-
-.lightbox{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:100%;
-
-    background:rgba(0,0,0,.92);
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:9999;
-
-    padding:20px;
-
-}
-
-.lightbox img{
-
-    max-width:90%;
-
-    max-height:90%;
-
-    border-radius:12px;
-
-    box-shadow:0 0 30px rgba(255,215,0,.4);
-
-}
-
-.close-lightbox{
-
-    position:absolute;
-
-    top:20px;
-
-    right:30px;
-
-    font-size:45px;
-
-    color:#fff;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.close-lightbox:hover{
-
-    color:#d4af37;
-
-}
-
-.gallery .card img{
-
-    cursor:pointer;
-
-}.filter-buttons{
-
-    text-align:center;
-
-    margin-bottom:35px;
-
-}
-
-.filter-btn{
-
-    padding:10px 20px;
-
-    margin:6px;
-
-    border:none;
-
-    border-radius:30px;
-
-    background:#222;
-
-    color:#fff;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.filter-btn:hover,
-.filter-btn.active{
-
-    background:#d4af37;
-
-    color:#000;
-
-}/* ======================
-   SEARCH BOX
-====================== */
-
-.search-box{
-
-    text-align:center;
-
-    margin-bottom:30px;
-
-}
-
-.search-box input{
-
-    width:90%;
-    max-width:420px;
-
-    padding:14px 18px;
-
-    border:1px solid #d4af37;
-
-    border-radius:30px;
-
-    background:#1d1d1d;
-
-    color:#fff;
-
-    font-size:16px;
-
-    outline:none;
-
-}
-
-.search-box input:focus{
-
-    box-shadow:0 0 12px rgba(212,175,55,.4);
-
-}/* ==========================
-      CUSTOMER REVIEWS
-========================== */
-
-#reviews{
-
-    padding:80px 20px;
-
-    background:#111;
-
-    text-align:center;
-
-}
-
-.review-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-    gap:25px;
-
-    margin-top:40px;
-
-}
-
-.review-card{
-
-    background:#1d1d1d;
-
-    padding:25px;
-
-    border-radius:15px;
-
-    border:1px solid rgba(212,175,55,.25);
-
-    transition:.3s;
-
-}
-
-.review-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 10px 25px rgba(212,175,55,.25);
-
-}
-
-.review-card h3{
-
-    color:#FFD700;
-
-    margin-bottom:15px;
-
-}
-
-.review-card p{
-
-    color:#ddd;
-
-    line-height:1.8;
-
-}
-
-.review-card h4{
-
-    margin-top:18px;
-
-    color:#d4af37;
-
-/* ==============================================================
-        LUXURY PAYMENT CENTER (MUTED & GOLDEN NUMBERS)
-================================================================*/
-#payment {
-    padding: 100px 20px;
-    background: #0b0b0b;
-    text-align: center;
-    border-top: 1px solid rgba(212, 175, 55, 0.05);
-}
-
-.payment-subtitle {
-    color: #888; /* ডার্ক গ্রে */
+    gap: 30px;
     margin-bottom: 50px;
-    font-size: 16px;
-    letter-spacing: 1px;
 }
 
-.payment-container {
+.search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 14px 20px 14px 50px;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+    color: var(--text-pure);
+    font-size: 14px;
+    outline: none;
+    transition: var(--transition-premium);
+}
+
+#searchInput:focus {
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 20px rgba(197, 168, 128, 0.1);
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border: 1px solid var(--border-light);
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition-premium);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    border-color: var(--primary-gold);
+    color: var(--gold-bright);
+    background: rgba(197, 168, 128, 0.03);
+}
+
+/* Art Grid & Cards */
+.gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
-    max-width: 850px;
-    margin: auto;
 }
 
-.payment-card {
-    background: rgba(255, 255, 255, 0.01);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 24px;
-    padding: 45px 40px;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+.art-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    transition: var(--transition-premium);
+    display: flex;
+    flex-direction: column;
+}
+
+.art-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--border-subtle);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.art-thumb {
     position: relative;
     overflow: hidden;
+    margin: 0;
 }
 
-.bkash { border: 1px solid rgba(226, 19, 110, 0.2); }
-.nagad { border: 1px solid rgba(255, 122, 0, 0.2); }
-
-.payment-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.03);
+.art-thumb img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.bkash:hover {
-    box-shadow: 0 20px 40px rgba(226, 19, 110, 0.12);
-    border-color: rgba(226, 19, 110, 0.5);
+.art-card:hover .art-thumb img {
+    transform: scale(1.04);
 }
 
-.nagad:hover {
-    box-shadow: 0 20px 40px rgba(255, 122, 0, 0.12);
-    border-color: rgba(255, 122, 0, 0.5);
+/* Image overlay on hover */
+.card-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(10, 10, 10, 0.4);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
 }
 
-.payment-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-    font-weight: 600;
+.art-card:hover .card-overlay {
+    opacity: 1;
 }
 
-.bkash h3 { color: #e2136e; text-shadow: 0 0 15px rgba(226, 19, 110, 0.25); }
-.nagad h3 { color: #ff7a00; text-shadow: 0 0 15px rgba(255, 122, 0, 0.25); }
-
-.payment-card p {
-    color: #666; /* মিউটেড কালার */
-    font-size: 13px;
+.view-details {
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 2px;
-}
-
-/* ফোন নম্বরের কালার কড়া সাদা থেকে লাক্সারি গোল্ডেন করা হলো */
-.payment-card h1 {
-    margin: 25px 0;
-    font-size: 34px;
-    letter-spacing: 1.5px;
-    color: #d4af37; 
-    font-weight: 400;
-    font-family: sans-serif;
-}
-
-.copy-btn {
-    padding: 10px 24px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 50px;
+    border: 1px solid var(--text-pure);
+    padding: 10px 20px;
     cursor: pointer;
+}
+
+.art-meta {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.art-category {
+    color: var(--primary-gold);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.art-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.art-size {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.art-size i {
+    margin-right: 6px;
+    font-size: 12px;
+}
+
+.art-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-light);
+}
+
+.art-price {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.status-quote {
+    font-size: 13px;
+    color: var(--primary-gold);
+    font-style: italic;
+}
+
+/* ===============================================
+        ABOUT / ATELIER STORY
+=============================================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-content p {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-left: 1px solid var(--border-subtle);
+    padding-left: 40px;
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: var(--primary-gold);
+    line-height: 1;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* ===============================================
+        PREMIUM COMMISSIONS FORM
+=============================================== */
+.max-width-md {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.premium-form {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    padding: 50px 40px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary-gold);
+}
+
+.premium-form input, .premium-form select, .premium-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--bg-deep);
+    border: 1px solid var(--border-light);
+    color: var(--text-pure);
     font-size: 14px;
-    font-weight: 600;
+    outline: none;
+    transition: var(--transition-premium);
+}
+
+.premium-form input:focus, .premium-form select:focus, .premium-form textarea:focus {
+    border-color: var(--primary-gold);
+}
+
+.premium-form textarea {
+    resize: vertical;
+}
+
+.btn-wide {
+    width: 100%;
+    max-width: 250px;
+}
+
+/* ===============================================
+        SECURE ACQUIREMENT (PAYMENT)
+=============================================== */
+.payment-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+
+.gateway-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    padding: 45px 35px;
+    flex: 1;
+    min-width: 300px;
+    transition: var(--transition-premium);
+}
+
+.gateway-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+}
+
+.bkash-color { color: #e2136e; }
+
+/* চিকন লাক্সারি বর্ডার ও হোভার নিয়ন গ্লো */
+.gateway-card:first-child {
+    border: 1px solid rgba(226, 19, 110, 0.15);
+}
+.gateway-card:first-child:hover {
+    border-color: var(--bkash-border);
+    box-shadow: 0 20px 40px var(--bkash-glow);
+    transform: translateY(-5px);
+}
+
+.gateway-card.disabled {
+    opacity: 0.5;
+    border: 1px solid rgba(255, 122, 0, 0.05);
+}
+.gateway-card.disabled:hover {
+    border-color: var(--nagad-border);
+    box-shadow: 0 20px 40px var(--nagad-glow);
+    transform: translateY(-5px);
+}
+
+.gateway-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.number-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: var(--bg-deep);
+    padding: 12px;
+    border: 1px solid var(--border-light);
+    margin: 20px 0;
+}
+
+.phone-num {
+    font-size: 24px;
+    color: var(--primary-gold);
+    letter-spacing: 1px;
+}
+
+.btn-copy {
     background: transparent;
-    color: #ffe58a; /* সফট শ্যাম্পেন গোল্ড */
-    margin: 10px 0 25px;
-    transition: 0.3s ease;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
-.copy-btn:hover:not([disabled]) {
-    background: #d4af37;
-    color: #000;
-    border-color: #d4af37;
+.btn-copy:hover {
+    color: var(--gold-bright);
 }
 
-.copy-btn[disabled] {
-    color: #444;
-    border-color: rgba(255, 255, 255, 0.03);
-    cursor: not-allowed;
+.gateway-instruction {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 25px;
 }
 
-.payment-note {
-    margin-top: 20px;
-    color: #888; /* ডার্ক গ্রে */
-    font-size: 14px;
+.status-msg {
+    margin-top: 30px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
 }
 
-.payment-card .btn {
-    padding: 12px 30px;
-    font-size: 14px;
-    margin-top: 15px;
+/* ===============================================
+        COLLECTOR TESTIMONIALS
+=============================================== */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    padding: 40px;
+}
+
+.stars {
+    color: var(--primary-gold);
+    font-size: 11px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.testimonial-card p {
+    font-size: 16px;
+    color: var(--text-pure);
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.testimonial-card cite {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary-gold);
+    font-style: normal;
+    display: block;
+}
+
+/* ===============================================
+        CONTACT SECTION
+=============================================== */
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+}
+
+.contact-info .section-title {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.text-white { color: var(--text-pure); }
+.text-muted { color: var(--text-muted); font-weight: 300; }
+
+.contact-meta-list {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+.meta-item i {
+    color: var(--primary-gold);
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.meta-item strong {
+    color: var(--text-pure);
+}
+
+.social-links a {
+    color: var(--text-pure);
+    border: 1px solid var(--border-light);
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: var(--transition-premium);
+}
+
+.social-links a:hover {
+    border-color: var(--primary-gold);
+    color: var(--primary-gold);
+    transform: translateY(-3px);
+}
+
+/* ===============================================
+        FOOTER
+=============================================== */
+.site-footer {
+    background-color: #050505;
+    padding: 40px 0;
+    border-top: 1px solid var(--border-light);
+}
+
+.footer-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.footer-credit {
+    letter-spacing: 1px;
+}
+
+/* ===============================================
+        FLOATING WHATSAPP & LIGHTBOX
+=============================================== */
+.whatsapp-floating {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background-color: #25D366;
+    color: var(--text-pure);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    text-decoration: none;
+    transition: var(--transition-premium);
+}
+
+.whatsapp-floating:hover {
+    background-color: #128C7E;
+    transform: scale(1.08) translateY(-3px);
+}
+
+/* Lightbox Framework Container */
+.lightbox {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(5, 5, 5, 0.96);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 85%;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 30px; right: 40px;
+    font-size: 38px;
+    color: var(--text-pure);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-lightbox:hover {
+    color: var(--primary-gold);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--primary-gold); }
+
+/* ===============================================
+        RESPONSIVE MEDIA QUERIES (MOBILE FIX)
+=============================================== */
+@media (max-width: 992px) {
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-stats { border-left: none; padding-left: 0; flex-direction: row; justify-content: space-between; }
+    .hero-title { font-size: 48px; }
+}
+
+@media (max-width: 768px) {
+    .header-wrap { flex-direction: column; gap: 20px; text-align: center; }
+    .main-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+    .main-nav .nav-link { margin-left: 0; font-size: 12px; }
+    .header-cta { display: none; } /* মোবাইলে স্পেস বাঁচাতে হিডেন */
+    
+    .hero-viewport { height: auto; padding: 100px 0; }
+    .hero-title { font-size: 38px; }
+    .hero-actions { flex-direction: column; gap: 15px; }
+    
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .section-title { font-size: 30px; }
+    .footer-wrap { flex-direction: column; gap: 15px; text-align: center; }
 }

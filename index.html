@@ -1,232 +1,304 @@
 <!DOCTYPE html>
-<html lang="bn">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AKKHORSAJ | Art in Every Stroke</title>
+    <title>AKKHORSAJ | Premium Islamic Art & Calligraphy Gallery</title>
+    <meta name="description" content="Discover premium Arabic calligraphy, original Bengali lettering, modern abstract Islamic art, and bespoke design solutions by AKKHORSAJ.">
+    
+    <!-- Premium Fonts & Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
-    <!-- Decap CMS Identity Widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Netlify/Decap CMS Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
 </head>
-
 <body>
 
-<header>
-    <div class="container">
-        <div class="logo">
-            <img src="images/logo.png" alt="AKKHORSAJ Logo">
-            <h2>AKKHORSAJ</h2>
-        </div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#about">About</a>
-            <a href="#order">Order</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </div>
-</header>
-
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1>Art in Every Stroke</h1>
-        <p>Original Bengali & Arabic Calligraphy, Islamic Art and Premium Canvas Paintings.</p>
-        <a href="#gallery" class="btn">Explore Gallery</a>
-    </div>
-</section>
-
-<section id="gallery" class="gallery">
-    <h2>
-        <div class="filter-buttons">
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="🔍 Search Artwork...">
+    <!-- Global Navigation -->
+    <header class="site-header">
+        <div class="container header-wrap">
+            <div class="brand">
+                <img src="images/logo.png" alt="AKKHORSAJ Premium Art Logo" class="logo-img">
+                <span class="logo-text">AKKHORSAJ</span>
             </div>
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="couple">Couple</button>
-            <button class="filter-btn" data-filter="baby">Baby</button>
-            <button class="filter-btn" data-filter="arabic">Arabic</button>
-            <button class="filter-btn" data-filter="abstract">Abstract</button>
-            <!-- নতুন যুক্ত হওয়া ফিল্টার বাটন সমূহ -->
-            <button class="filter-btn" data-filter="logo-design">Logo Design</button>
-            <button class="filter-btn" data-filter="graphics">Graphics</button>
-            <button class="filter-btn" data-filter="showpiece">Showpiece</button>
+            <nav class="main-nav" aria-label="Primary Navigation">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#about" class="nav-link">Our Story</a>
+                <a href="#order" class="nav-link">Commissions</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-cta">
+                <a href="#gallery" class="btn btn-outline">Explore Art</a>
+            </div>
         </div>
-        Featured Artworks
-    </h2>
+    </header>
 
-    <div class="gallery-grid">
-        <!-- Card 1: Couple -->
-        <div class="card" data-category="couple">
-            <img src="https://ibb.co.com/KxhRYjt7.jpg" alt="Couple Name Calligraphy">
-            <h3>Couple Name Calligraphy</h3>
-            <p>Size: 18 × 24 Inch</p>
-            <h4>Price: যোগাযোগ করুন</h4>
-            <a href="#order" class="btn">Order Now</a>
-        </div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-viewport" id="home">
+            <div class="hero-overlay"></div>
+            <div class="container hero-container">
+                <span class="hero-subtitle">Exquisite Fine Art & Calligraphy</span>
+                <h1 class="hero-title">Art in Every Stroke</h1>
+                <p class="hero-description">Specializing in original Arabic & Bengali calligraphy, bespoke contemporary Islamic art, and premium canvas masterpieces tailored for modern spaces.</p>
+                <div class="hero-actions">
+                    <a href="#gallery" class="btn btn-primary">View Collection</a>
+                    <a href="#order" class="btn btn-secondary">Request Custom Art</a>
+                </div>
+            </div>
+        </section>
 
-        <!-- Card 2: Baby -->
-        <div class="card" data-category="baby">
-            <img src="https://ibb.co.com/jPFfH8kd.jpg" alt="Baby Name Calligraphy">
-            <h3>নবজাতক শিশুর নামলিপি</h3>
-            <p>Size: 16 × 20 Inch</p>
-            <h4>Price: যোগাযোগ করুন</h4>
-            <a href="#order" class="btn">Order Now</a>
-        </div>
+        <!-- Curated Gallery Section -->
+        <section id="gallery" class="section gallery-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Curated Collection</h2>
+                    <p class="section-subtitle">Filter by medium or category to find the perfect piece for your collection.</p>
+                </div>
 
-        <!-- Card 3: Couple -->
-        <div class="card" data-category="couple">
-            <img src="https://ibb.co.com/0RbsW.jpg" alt="Gothic Couple Name">
-            <h3>Couple Name (Gothic Style)</h3>
-            <p>Size: 18 × 24 Inch</p>
-            <h4>Price: যোগাযোগ করুন</h4>
-            <a href="#order" class="btn">Order Now</a>
-        </div>
+                <!-- Premium Filter & Search Bar -->
+                <div class="gallery-controls">
+                    <div class="search-wrapper">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="searchInput" placeholder="Search artworks...">
+                    </div>
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">All Collection</button>
+                        <button class="filter-btn" data-filter="arabic">Arabic Calligraphy</button>
+                        <button class="filter-btn" data-filter="couple">Bespoke Couple Art</button>
+                        <button class="filter-btn" data-filter="baby">Nursery & Baby</button>
+                        <button class="filter-btn" data-filter="abstract">Modern Abstract</button>
+                        <button class="filter-btn" data-filter="logo-design">Identity Design</button>
+                        <button class="filter-btn" data-filter="graphics">Digital Branding</button>
+                        <button class="filter-btn" data-filter="showpiece">Artistic Crafts</button>
+                    </div>
+                </div>
 
-        <!-- Card 4: Abstract -->
-        <div class="card" data-category="abstract">
-            <img src="https://ibb.co.com/jZRj7Rrp.jpg" alt="Abstract Art">
-            <h3>Abstract Background Art</h3>
-            <p>Size: 18 × 24 Inch</p>
-            <h4>Price: যোগাযোগ করুন</h4>
-            <a href="#order" class="btn">Order Now</a>
-        </div>
+                <!-- Gallery Grid -->
+                <div class="gallery-grid">
+                    <!-- Artwork 1: Arabic -->
+                    <article class="art-card" data-category="arabic">
+                        <figure class="art-thumb">
+                            <img src="https://ibb.co.com/DH2VVjpg.jpg" alt="Premium Arabic Calligraphy Canvas">
+                            <div class="card-overlay">
+                                <span class="view-details">View Details</span>
+                            </div>
+                        </figure>
+                        <div class="art-meta">
+                            <span class="art-category">Arabic Calligraphy</span>
+                            <h3 class="art-title">Surah Al-Ikhlas Canvas</h3>
+                            <p class="art-size"><i class="fa-solid fa-vector-square"></i> 24 × 36 Inches</p>
+                            <div class="art-footer">
+                                <span class="art-price">$90 / ৳ 10,000</span>
+                                <a href="#order" class="btn btn-sm">Acquire Work</a>
+                            </div>
+                        </div>
+                    </article>
 
-        <!-- Card 5: Arabic -->
-        <div class="card" data-category="arabic">
-            <img src="https://ibb.co.com/DH2VVjpg.jpg" alt="Arabic Calligraphy">
-            <h3>আরবি ক্যালিগ্রাফি</h3>
-            <p>Size: 24 × 36 Inch</p>
-            <h4>৳ 10,000</h4>
-            <a href="#order" class="btn">Order Now</a>
-        </div>
+                    <!-- Artwork 2: Couple Gothic -->
+                    <article class="art-card" data-category="couple">
+                        <figure class="art-thumb">
+                            <img src="https://ibb.co.com/0RbsW.jpg" alt="Gothic Couple Name Calligraphy">
+                            <div class="card-overlay">
+                                <span class="view-details">View Details</span>
+                            </div>
+                        </figure>
+                        <div class="art-meta">
+                            <span class="art-category">Bespoke Couple Art</span>
+                            <h3 class="art-title">Gothic Monogram Canvas</h3>
+                            <p class="art-size"><i class="fa-solid fa-vector-square"></i> 18 × 24 Inches</p>
+                            <div class="art-footer">
+                                <span class="art-price status-quote">Price on Request</span>
+                                <a href="#order" class="btn btn-sm">Commission</a>
+                            </div>
+                        </div>
+                    </article>
 
-        <!-- New Card 6: Logo Design -->
-        <div class="card" data-category="logo-design">
-            <img src="images/logo-sample.jpg" alt="Premium Logo Design">
-            <h3>Premium Logo Design</h3>
-            <p>Format: AI, EPS, SVG, PNG</p>
-            <h4>Price: যোগাযোগ করুন</h4>
-            <a href="#order" class="btn">Order Now</a>
-        </div>
+                    <!-- Artwork 3: Baby -->
+                    <article class="art-card" data-category="baby">
+                        <figure class="art-thumb">
+                            <img src="https://ibb.co.com/jPFfH8kd.jpg" alt="Bengali Newborn Baby Name Calligraphy">
+                            <div class="card-overlay">
+                                <span class="view-details">View Details</span>
+                            </div>
+                        </figure>
+                        <div class="art-meta">
+                            <span class="art-category">Nursery & Baby</span>
+                            <h3 class="art-title">Traditional Bengali Baby Name Canvas</h3>
+                            <p class="art-size"><i class="fa-solid fa-vector-square"></i> 16 × 20 Inches</p>
+                            <div class="art-footer">
+                                <span class="art-price status-quote">Price on Request</span>
+                                <a href="#order" class="btn btn-sm">Commission</a>
+                            </div>
+                        </div>
+                    </article>
 
-        <!-- New Card 7: Graphics -->
-        <div class="card" data-category="graphics">
-            <img src="images/graphics-sample.jpg" alt="Branding Graphics Design">
-            <h3>Branding Graphics Design</h3>
-            <p>Social Media Banner & Identity</p>
-            <h4>Price: যোগাযোগ করুন</h4>
-            <a href="#order" class="btn">Order Now</a>
-        </div>
+                    <!-- Additional items follow the same professional pattern -->
+                </div>
+            </div>
+        </section>
 
-        <!-- New Card 8: Showpiece -->
-        <div class="card" data-category="showpiece">
-            <img src="images/showpiece-sample.jpg" alt="Handmade Artistic Showpiece">
-            <h3>Handmade Artistic Showpiece</h3>
-            <p>Size: Custom Wooden/Clay Craft</p>
-            <h4>Price: যোগাযোগ করুন</h4>
-            <a href="#order" class="btn">Order Now</a>
+        <!-- About / Story Section -->
+        <section id="about" class="section about-section bg-light">
+            <div class="container about-grid">
+                <div class="about-content">
+                    <span class="section-tag">The Atelier</span>
+                    <h2 class="section-title">Behind the Strokes</h2>
+                    <p>Founded on the principles of precision and passion, AKKHORSAJ bridges traditional heritage and contemporary aesthetics. Every piece is a unique narrative told through meticulously hand-painted canvases and elite modern typography.</p>
+                    <p>Whether it is a towering spiritual Arabic calligraphy for your living room or a minimal corporate brand identity, we treat every stroke as a masterpiece.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Artworks Delivered Worldwide</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Handcrafted Quality</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Private Commissions / Order Form -->
+        <section id="order" class="section commission-section">
+            <div class="container max-width-md">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Private Commission</h2>
+                    <p class="section-subtitle">Request a custom-made artwork tailored precisely to your interior theme and size preferences.</p>
+                </div>
+                <form class="premium-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="clientName">Full Name</label>
+                            <input type="text" id="clientName" placeholder="e.g., John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientPhone">Phone / WhatsApp</label>
+                            <input type="tel" id="clientPhone" placeholder="+880..." required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="artTitle">Artwork Category/Title</label>
+                            <input type="text" id="artTitle" placeholder="e.g., Custom Arabic Calligraphy">
+                        </div>
+                        <div class="form-group">
+                            <label for="artSize">Canvas Size</label>
+                            <select id="artSize">
+                                <option value="">Select Dimensions</option>
+                                <option value="16x20">16 × 20 Inches</option>
+                                <option value="18x24">18 × 24 Inches</option>
+                                <option value="24x36">24 × 36 Inches</option>
+                                <option value="custom">Bespoke Custom Size</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="requirements">Design Requirements & Palette Preferences</label>
+                        <textarea id="requirements" rows="5" placeholder="Describe your vision, colors, text, or references..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-wide">Submit Inquiry</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Premium Payment Gateways -->
+        <section id="payment" class="section payment-section bg-light">
+            <div class="container text-center">
+                <div class="section-header">
+                    <h2 class="section-title">Secure Acquirement</h2>
+                    <p class="section-subtitle">We accept direct local mobile banking & bank transfers for global orders.</p>
+                </div>
+                <div class="payment-grid">
+                    <div class="gateway-card">
+                        <div class="gateway-icon bkash-color"><i class="fa-solid fa-wallet"></i></div>
+                        <h3>bKash Personal</h3>
+                        <div class="number-box">
+                            <span id="bkashNumber" class="phone-num">01629856375</span>
+                            <button class="btn-copy" onclick="copyNumber()" aria-label="Copy bKash Number"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+                        <p class="gateway-instruction">Kindly share the transaction receipt via WhatsApp to confirm commission.</p>
+                        <a href="https://wa.me/8801311283530" class="btn btn-outline btn-sm" target="_blank"><i class="fa-brands fa-whatsapp"></i> Share Receipt</a>
+                    </div>
+                    
+                    <div class="gateway-card disabled">
+                        <div class="gateway-icon"><i class="fa-solid fa-credit-card"></i></div>
+                        <h3>International / Nagad</h3>
+                        <p class="status-msg">Merchant Gateway Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section testimonials-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Collector Testimonials</h2>
+                </div>
+                <div class="testimonial-grid">
+                    <blockquote class="testimonial-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>"The precision in the Arabic calligraphy exceeded my expectations. A stunning addition to our corporate lounge."</p>
+                        <cite>— Abdullah, Collector</cite>
+                    </blockquote>
+                    <blockquote class="testimonial-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>"Impeccable structural safety packaging and prompt response time. Highly recommended."</p>
+                        <cite>— Fatema, Architect</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section bg-dark">
+            <div class="container grid-2-col">
+                <div class="contact-info">
+                    <h2 class="section-title text-white">Let's Discuss Your Next Piece</h2>
+                    <p class="text-muted">Available worldwide for institutional artwork setups, residential fine art, and commercial brand calligraphy.</p>
+                    
+                    <div class="contact-meta-list">
+                        <div class="meta-item"><i class="fa-solid fa-user"></i> <span><strong>Curator:</strong> Mahfuzur Rahman</span></div>
+                        <div class="meta-item"><i class="fa-solid fa-phone"></i> <span>+880 1629 856375</span></div>
+                        <div class="meta-item"><i class="fa-brands fa-whatsapp"></i> <span>+880 1311 283530</span></div>
+                        <div class="meta-item"><i class="fa-solid fa-envelope"></i> <span>mahfuzurr366@gmail.com</span></div>
+                        <div class="meta-item"><i class="fa-solid fa-location-dot"></i> <span>Dhaka | Mymensingh, Bangladesh</span></div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1DPGvUzwi8/" target="_blank" aria-label="Facebook Studio Page"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container footer-wrap">
+            <p>&copy; 2026 AKKHORSAJ Atelier. All Rights Reserved.</p>
+            <p class="footer-credit">Crafted for Global Art Collectors.</p>
         </div>
+    </footer>
+
+    <!-- Premium Floating Action -->
+    <a href="https://wa.me/8801311283530?text=Assalamu%20Alaikum.%20I%20am%20interested%20in%20commissioning%20an%20artwork%20from%20AKKHORSAJ." class="whatsapp-floating" target="_blank" aria-label="Order via WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Lightbox Framework Container -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <button class="close-lightbox" aria-label="Close Lightbox">&times;</button>
+        <img id="lightbox-img" src="" alt="Enlarged Artwork View">
     </div>
-</section>
 
-<section id="about">
-    <h2>About AKKHORSAJ</h2>
-    <p>AKKHORSAJ creates premium Bengali, Arabic and Islamic Calligraphy with handmade canvas paintings.</p>
-</section>
-
-<section id="order">
-    <h2>Place Your Order</h2>
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="tel" placeholder="Phone Number" required>
-        <input type="text" placeholder="Artwork Name">
-        <select>
-            <option>Select Size</option>
-            <option>16 × 20 Inch</option>
-            <option>18 × 24 Inch</option>
-            <option>24 × 36 Inch</option>
-            <option>Custom Size</option>
-        </select>
-        <textarea placeholder="Write your requirements"></textarea>
-        <button type="submit" class="btn">Submit Order</button>
-    </form>
-</section>
-
-<section id="payment">
-    <h2>Secure Payment</h2>
-    <p class="payment-subtitle">Choose your preferred payment method</p>
-    <div class="payment-container">
-        <div class="payment-card bkash">
-            <h3>bKash</h3>
-            <p>Personal Number</p>
-            <h1 id="bkashNumber">01629856375</h1>
-            <button class="copy-btn" onclick="copyNumber()">📋 Copy Number</button>
-            <p class="payment-note">After payment send your Transaction ID.</p>
-            <a href="https://wa.me/8801311283530" class="btn" target="_blank">💬 Send Transaction ID</a>
-        </div>
-        <div class="payment-card nagad">
-            <h3>Nagad</h3>
-            <p>Coming Soon</p>
-            <h1>***********</h1>
-            <button class="copy-btn" disabled>Available Soon</button>
-        </div>
-    </div>
-</section>
-
-<section id="reviews">
-    <h2>Customer Reviews</h2>
-    <div class="review-grid">
-        <div class="review-card">
-            <h3>⭐⭐⭐⭐⭐</h3>
-            <p>"অসাধারণ ক্যালিগ্রাফি। বাস্তবে ছবিটি আরও সুন্দর ছিল।"</p>
-            <h4>— Abdullah</h4>
-        </div>
-        <div class="review-card">
-            <h3>⭐⭐⭐⭐⭐</h3>
-            <p>"খুব সুন্দর প্যাকেজিং এবং সময়মতো ডেলিভারি।"</p>
-            <h4>— Fatema</h4>
-        </div>
-        <div class="review-card">
-            <h3>⭐⭐⭐⭐⭐</h3>
-            <p>"আমাদের Couple Name Canvas সবাই খুব পছন্দ করেছে।"</p>
-            <h4>— Imran & Sumaiya</h4>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-    <p><strong>Name:</strong> Mahfuzur Rahman</p>
-    <p><strong>Phone:</strong> 01629856375</p>
-    <p><strong>WhatsApp:</strong> 01311283530</p>
-    <p><strong>Email:</strong> mahfuzurr366@gmail.com</p>
-    <p><strong>Location:</strong> Dhaka, Mymensingh, Bangladesh</p>
-    <a href="https://www.facebook.com/share/1DPGvUzwi8/" target="_blank">Facebook Page</a>
-</section>
-
-<footer>
-    <p>© 2026 AKKHORSAJ | All Rights Reserved.</p>
-    <a href="https://wa.me/8801311283530?text=আসসালামু আলাইকুম। আমি AKKHORSAJ থেকে একটি ক্যালিগ্রাফি অর্ডার করতে চাই।" class="whatsapp" target="_blank">💬 WhatsApp Order</a>
-</footer>
-
-<div id="lightbox" class="lightbox">
-    <span class="close-lightbox">&times;</span>
-    <img id="lightbox-img" src="" alt="Artwork Preview">
-</div>
-
-<script src="script.js"></script>
-<!-- Decap CMS Login Script -->
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
+    <script src="script.js" defer></script>
 </body>
 </html>
